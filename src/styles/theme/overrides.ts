@@ -1,6 +1,7 @@
 import { alpha } from '@mui/material/styles'
 import { outlinedInputClasses } from '@mui/material'
 import { Components } from '@mui/material/styles/components'
+
 export function overrides(theme: any): Components<any> {
   const modeDark = theme.palette.mode === 'dark'
   return {
@@ -151,6 +152,26 @@ export function overrides(theme: any): Components<any> {
     },
     MuiTypography: {
       styleOverrides: {
+        root: ({ ownerState, theme }) => ({
+          ...(ownerState.color === 'primary' && {
+            color: theme.palette.primary.main
+          }),
+          ...(ownerState.color === 'secondary' && {
+            color: theme.palette.secondary.main
+          }),
+          ...(ownerState.color === 'error' && {
+            color: theme.palette.error.main
+          }),
+          ...(ownerState.color === 'success' && {
+            color: theme.palette.success.main
+          }),
+          ...(ownerState.color === 'warning' && {
+            color: theme.palette.warning.main
+          }),
+          ...(ownerState.color === 'info' && {
+            color: theme.palette.info.main
+          })
+        }),
         paragraph: {
           marginBottom: theme.spacing(2)
         },
