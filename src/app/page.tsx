@@ -1,6 +1,9 @@
-import * as React from 'react'
-import { Typography } from '@mui/material'
+import TwoColumnLayout from '../../components/TwoColumnLayout';
 
-export default function HomePage() {
-  return <Typography variant="h1">Hello world!</Typography>
+export default function Home() {
+  return (
+    <main>
+      <TwoColumnLayout /> 
+    </main>
+  );
 }
